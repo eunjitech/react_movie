@@ -9,14 +9,17 @@ function App() {
   useEffect(() => {
     console.log("api를 한번만 부르고 싶을 때?");
   }, []);
-  // useEffect(() => {
-  //   console.log("키워드가 변할 때만", keyword);
-  // }, [keyword]);
+  useEffect(() => {
+    console.log("키워드가 변할 때만", keyword);
+  }, [keyword]);
   useEffect(() => {
     if (keyword.length > 5) {
       console.log("키워드가 5초과", keyword);
     }
   }, [keyword]);
+  useEffect(()=>{
+    console.log("counter나 키워드가 변화할 때");
+  },[keyword, counter]);
   return (
     <div className="App">
       <input
